@@ -3,23 +3,23 @@ $(document).ready(function(){
 });
 
 let game = {
-  time = 90,
+  time : 90,
 
   startTimer: function() {
     $("#timer").text("Time left: " + game.time);
     setInterval(game.countdown, 1000);
-    questions.displayQ();
+    questionArray.displayQ();
   },
   countdown: function(){
     game.time--;
-    $(#timer).text("Time left: " + game.time);
+    $("#timer").text("Time left: " + game.time);
     if (game.time === 0) {
       game.stop();
     }
   },
   stop: function(){
     clearInterval();
-    questions.checkAnswers();
+    QA.checkAnswers();
   },
   finalScoreDiv: function(numCorrect, numIncorrect, numUnanswered){
     $("#finalScore").show();
@@ -81,6 +81,7 @@ let QA = {
 
 game.finalScoreDiv(numCorrect, numIncorrect, numUnanswered);
 },
+}
 
 let questionArray = [
   {
