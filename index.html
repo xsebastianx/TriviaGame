@@ -3,13 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <title>Rick & Morty Trivia Game</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
     </head>
     <body>
-        <div id="title">
-        <h1>Rick & Morty Trivia Game</h1>
-        <h2>Show me what you got!</h2>
+        <div id=startContainer>
+            <h1>Rick & Morty Tiriva Game</h1>
+            <h3>Show me what you got!</h3>
+            <p id="timer">Remaining Time:</p>
+            <button type="button" class="btn btn-primary" id="startBtn">Start Game</button>
         </div>
+        <div id="questionsContainer">
+        </div>
+        <button type="button" class="btn btn-primary" id="doneBtn">Done</button>
+        <div id="finalScore">
+        </div>
+
+
     </body>
 </html>
