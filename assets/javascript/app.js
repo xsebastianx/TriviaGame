@@ -1,108 +1,137 @@
 $(document).ready(function(){
+  $("#startBtn").on("click", game.startTimer)
+});
 
-  $("#timer").hide();
-  $("#doneBtn").hide(); 
-  $("#startBtn").on("click", questions.startGame)
-})
+let game = {
+  time = 90,
 
-let questions = [
+  startTimer: function() {
+    $("#timer").text("Time left: " + game.time);
+    setInterval(game.countdown, 1000);
+    questions.displayQ();
+  },
+  countdown: function(){
+    game.time--;
+    $(#timer).text("Time left: " + game.time);
+    if (game.time === 0) {
+      game.stop();
+    }
+  },
+  stop: function(){
+    clearInterval();
+    questions.checkAnswers();
+  },
+  finalScoreDiv: function(numCorrect, numIncorrect, numUnanswered){
+    $("#finalScore").show();
+    $("#questionsContainer").empty();
+    $("#timer").empty();
+    $("#timer").hide();
+    $("#correct").text("Correct: " + numCorrect);
+    $("#incorrect").text("Incorect: " + numIncorrect);
+    $("unanswered").text("Unanswered: " + numUnanswered);
+  }
+}
+
+let QA = {
+  displayQ: function() {
+    let qContainer = $("#questionsContainer");
+    let answerGroup = $(.form-check");
+    qContainer.append("<h2>Answer the following questions:</h2>");
+
+    for (let i = 0; i <questionArray.length; i++){
+      qContainer.append("<div id='question'>") + questionArray[i].question + "</div>");
+
+      let answer1 = questionArray[i].answers[0];
+      let answer2 = questionArray[i].answers[1];
+      let answer3 = questionArray[i].answers[2];
+      let answer4 = questionArray[i].answers[3];
+
+      qContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer1 + '</label></div>');
+      qContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer2 + '</label></div>');
+      qContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer3 + '</label></div>');
+      qContainer.append('<div class="form-check"><input class="form-check-input" type="radio" name="radio-group'+i+'" id="radio'+i+'"><label class="form-check-label" id="radio'+i+'label" for="radio'+i+'">' + answer4 + '</label></div>');
+    }
+
+    let doneButton = "<button class="btn btn-primary" id="done-button" type="submit">Done</button>";
+    qContainer.append(doneButton);
+    $("#done-button").on("click", game.stop);
+  },
+
+  checkAnswers: function() {
+    let correctAnswer;
+    let userAnswer;
+    let numCorrect = 0;
+    let numIncorrect = 0;
+    let numUnanswered = 0;
+
+    for (let i = 0; i <questionArray.length; i++) {
+      correctAnswer = questionArray[i].correct;
+      userAnswer = $("input[id=radio"+i+"]:checked + label").text();
+
+      if (userAnswer === correctAnswer){
+        numCorrect++;
+      } else if (userAnswer === ""){
+        numUnanswered++;
+      } else if (userAnswer !== correctAnswer){
+        {
+          numIncorrect++;
+      }
+    }
+  }
+
+game.finalScoreDiv(numCorrect, numIncorrect, numUnanswered);
+},
+
+let questionArray = [
   {
     question: "What is Rick's favorite attraction in Anatomy Park?",
-    answers: [
-      { answer: "The Bone Train", value: false },
-      { answer: "Spleen Mountain", value: false },
-      { answer: "Bladder Falls", value: false },
-      { answer: "Pirates of the Pancreas", value: true }
-    ]
+    answers: ["The Bone Train", "Spleen Mountain", "Bladder Falls", "Pirates of the Pancreas"],
+    correct: "Pirates of the Pancreas"   
   },
   {
     question: "What is the meaning of 'wubaluba dub dub?",
-    answers: [
-      { answer: "I'm drunk", value: false },
-      { answer: "I'm in great pain", value: true },
-      { answer: "I'm smarter than everyone", value: false },
-      { answer: "My wife left me", value: false }
-    ]
+    answers: ["I'm drunk", "I'm in great pain", "I'm smarter than everyone", "My wife left me"],
+    correct: "I'm in great pain"
   },
   {
     question: "Who does Morty have a crush on?",
-    answers: [
-      { answer: "Tammy", value: false },
-      { answer: "Vanessa", value: false },
-      { answer: "Jessica", value: true },
-      { answer: "Jennifer", value: false }
-    ]
+    answers: ["Tammy", "Vanessa", "Jessica", "Jennifer"],
+    correct: "Jessica"
   },
   {
     question: "Who voices both Rick and Morty?",
-    answers: [
-      { answer: "Dan Harmon", value: false },
-      { answer: "Justin Roiland", value: true },
-      { answer: "Chris Parnell", value: false },
-      { answer: "Morgan Freeman", value: false }
-    ]
+    answers: ["Dan Harmon", "Justin Roiland", "Chris Parnell", "Morgan Freeman"],
+    correct: "Justin Roiland"
   },
   {
     question: "What is on a cob on Cob Planet?",
-    answers: [
-      { answer: "birds", value: false },
-      { answer: "molecules", value: false },
-      { answer: "corn", value: false },
-      { answer: "everything", value: true }
-    ]
+    answers: ["birds", "molecules", "corn", "everthing"],
+    correct: "everything"
   },
   {
     question: "What was Jerry's successful advertising pitch?",
-    answers: [
-      { answer: "Thirsty for Milk?", value: false },
-      { answer: "Hungry for Apples?", value: true },
-      { answer: "Addicted to lasagna?", value: false },
-      { answer: "Craving for Muffins?", value: false }
-    ]
+    answers: ["Thirsty for milk?", "Hungry for apples?", "Addicted to lasagna?", "Craving for muffins?"],
+    correct: "Hungry for Apples?"
   },
   {
     question: "Who comes to the rescue when Rick and Morty are performing on 'Planet Music' in the episode 'Get Schwifty'?",
-    answers: [
-      { answer: "Obama", value: false },
-      { answer: "Bird Person", value: false },
-      { answer: "Water-T", value: false },
-      { answer: "Ice-T", value: true }
-    ]
+    answers: ["Obama", "Bird Person", "Water-T", "Ice-T"],
+    correct: "Ice-T"
   },
   {
     question: "Which longtime family-friend does Beth shoot?",
-    answers: [
-      { answer: "Mr. Poopybutthole", value: true },
-      { answer: "Squanchy", value: false },
-      { answer: "Bird Person", value: false },
-      { answer: "Mr. Meeseeks", value: false }
-    ]
+    answers: ["Mr.Poopybutthole", "Squanchy", "Bird Person", "Mr. Meeseeks"],
+    correct: "Mr. Poopybutthole"
   },
   {
     question: "Who is the only one allowed to have Eyeholes?",
-    answers: [
-      { answer: "Rick", value: false },
-      { answer: "Tiny Rick", value: false },
-      { answer: "Eyehole Man", value: true },
-      { answer: "Jerry", value: false }
-    ]
+    answers: ["Rick", "Tiny Rick", "Eyehole Man", "Jerry"],
+    correct: "Eyehole Man"
   },
   {
     question: "Who won the Gear Wars?",
-    answers: [
-      { answer: "The Gearheads", value: false },
-      { answer: "The Cromulons", value: false },
-      { answer: "The Bird People", value: false },
-      { answer: "Nobody cares", value: true }
-    ]
+    answers: ["The Gearheads", "The Cromulons", "The Bird People", "Nobody cares"],
+    correct: "Nobody cares"
   }
 ];     
 
-let correct = 0;
-let incorrect = 0;
-let unanswered = 0;
-let timer = 90;
-
-startGame: function(){
-
-}
