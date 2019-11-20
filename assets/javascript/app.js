@@ -1,5 +1,4 @@
 var number = 45;
-
 var intervalId;
 
 var correctA = 0;
@@ -164,7 +163,7 @@ $("#start").on("click", function() {
   function decrement() {
 
     number--;
-    $("#time").html("<h2> Time Remaining: " + number + " Seconds</h2>" + "<br>");
+    $("#time").html("<h2>Time Remaining: " + number + " Seconds</h2>" + "<br>");
 
     if (number === 0) {
       stop();
