@@ -5,28 +5,52 @@
         <title>Rick & Morty Trivia Game</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="assets/javascript/app.js"></script>
     </head>
     <body>
-        <div id=startContainer>
+        <div id=container>
             <h1>Rick & Morty Trivia Game</h1>
             <h3>Show me what you got!</h3>
-            <button type="button" class="btn btn-primary" id="startBtn">Start Game</button>
-        </div>
-        
-        <p id="timer">Remaining Time:</p>
+            <div id="quiz" class="main-content">
 
-        <div id="questionsContainer">
+                <button id="start" class="btn">Start</button>
+    
+                <div id="time"></div>
+    
+                <div id="q1"></div>
+                <div id="a1"></div>
+                <div id="q2"></div>
+                <div id="a2"></div>
+                <div id="q3"></div>
+                <div id="a3"></div>
+                <div id="q4"></div>
+                <div id="a4"></div>
+                <div id="q5"></div>
+                <div id="a5"></div>
+                <div id="q6"></div>
+                <div id="a6"></div>
+                <div id="q7"></div>
+                <div id="a7"></div>
+                <div id="q8"></div>
+                <div id="a8"></div>
+                <div id="q9"></div>
+                <div id-"a9"></div>
+                <div id="q10"></div>
+                <div id="a10"></div>
+                <div id="submit"></div>
+    
+                <div id="resultsMessage"></div>
+                <div id="correct"></div>
+                <div id="incorrect"></div>
+                <div id="unanswered"></div>
+    
+            </div>
+    
         </div>
 
-        <button type="button" class="btn btn-primary" id="doneBtn">Done</button>
-        <div id="finalScore">
-            <p id="correct"></p>
-            <p id="incorrect"></p>
-            <p id="unanswered"></p>
-        </div>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
 
     </body>
 </html>
