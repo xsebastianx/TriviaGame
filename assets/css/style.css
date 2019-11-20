@@ -1,16 +1,8 @@
 body {
     margin: 300px;
+    background-color: tan;
 }
 
-header {
-    margin-top: -250px;
-}
-
-.navbar {
-    color: whitesmoke;
-    display: inline-block;
-    text-align: center;
-}
 
 
 

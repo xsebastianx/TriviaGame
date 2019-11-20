@@ -1,4 +1,4 @@
-var number = 90;
+var number = 45;
 
 var intervalId;
 
@@ -143,9 +143,9 @@ $("#start").on("click", function() {
   );
 
 
-  $("submit").html("<button id='done' class='btn'>Done</button>");
+  $("#submit").html("<button id='done' class='btn'>Done</button>");
   
-  $("done").on("click", function() {
+  $("#done").on("click", function() {
 
     keepingScore();
 
@@ -173,11 +173,11 @@ $("#start").on("click", function() {
       displayResults();
 
     }
-  };
+  }
 
   function stop() {
     clearInterval(intervalId);
-  };
+  }
   
   function displayResults() {
 
@@ -204,7 +204,7 @@ $("#start").on("click", function() {
     $("#a10").hide();
     $("#submit").hide();
 
-    $("#resultsMessage").html("<h3>All Done!</h3>");
+    $("#resultsMessage").html("<h3>Let's see what you got!</h3>");
     $("#correct").html("Correct Answers: " + correctA);
     $("#incorrect").html("Incorrect Answers: " + incorrectA);
   }
