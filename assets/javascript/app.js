@@ -210,16 +210,16 @@ $("#start").on("click", function() {
 
   function keepingScore() {
 
-    const userAnswer1 = $("input[name='a1']:checked").val();
-    const userAnswer2 = $("input[name='a2']:checked").val();
-    const userAnswer3 = $("input[name='a3']:checked").val();
-    const userAnswer4 = $("input[name='a4']:checked").val();
-    const userAnswer5 = $("input[name='a5']:checked").val();
-    const userAnswer6 = $("input[name='a6']:checked").val();
-    const userAnswer7 = $("input[name='a7']:checked").val();
-    const userAnswer8 = $("input[name='a8'):checked").val();
-    const userAnswer9 = $("input[name='a9'):checked").val();
-    const userAnswer10 = $("input[name='a10'):checked").val();
+    var userAnswer1 = $("input[name='a1']:checked").val();
+    var userAnswer2 = $("input[name='a2']:checked").val();
+    var userAnswer3 = $("input[name='a3']:checked").val();
+    var userAnswer4 = $("input[name='a4']:checked").val();
+    var userAnswer5 = $("input[name='a5']:checked").val();
+    var userAnswer6 = $("input[name='a6']:checked").val();
+    var userAnswer7 = $("input[name='a7']:checked").val();
+    var userAnswer8 = $("input[name='a8']:checked").val();
+    var userAnswer9 = $("input[name='a9']:checked").val();
+    var userAnswer10 = $("input[name='a10']:checked").val();
 
   
     // Question 1
