@@ -6,58 +6,47 @@ var incorrectA = 0;
 
 // questions
 
-var questions = [ 
-{
+var questions = [ {
   question: "What is Rick's favorite attraction in Anatomy Park?",
   answers: ["The Bone Train", "Spleen Mountain", "Bladder Falls", "Pirates of the Pancreas"],
-  correct: "Pirates of the Pancreas"   
-},
-{
+  correct: 3  
+},{
   question: "What is the meaning of 'wubaluba dub dub?",
   answers: ["I'm drunk", "I'm in great pain", "I'm smarter than everyone", "My wife left me"],
-  correct: "I'm in great pain"
-},
-{
+  correct: 1
+},{
   question: "Who does Morty have a crush on?",
   answers: ["Tammy", "Vanessa", "Jessica", "Jennifer"],
-  correct: "Jessica"
-},
-{
+  correct: 2
+},{
   question: "Who voices both Rick and Morty?",
   answers: ["Dan Harmon", "Justin Roiland", "Chris Parnell", "Morgan Freeman"],
-  correct: "Justin Roiland"
-},
-{
+  correct: 1
+},{
   question: "What is on a cob on Cob Planet?",
   answers: ["birds", "molecules", "corn", "everthing"],
-  correct: "everything"
-},
-{
+  correct: 3
+},{
   question: "What was Jerry's successful advertising pitch?",
   answers: ["Thirsty for milk?", "Hungry for apples?", "Addicted to lasagna?", "Craving for muffins?"],
-  correct: "Hungry for Apples?"
-},
-{
+  correct: 1
+},{
   question: "Who comes to the rescue when Rick and Morty are performing on 'Planet Music' in the episode 'Get Schwifty'?",
   answers: ["Obama", "Bird Person", "Water-T", "Ice-T"],
-  correct: "Ice-T"
-},
-{
+  correct: 3
+},{
   question: "Which longtime family-friend does Beth shoot?",
   answers: ["Mr.Poopybutthole", "Squanchy", "Bird Person", "Mr. Meeseeks"],
-  correct: "Mr. Poopybutthole"
-},
-{
+  correct: 0
+},{
   question: "Who is the only one allowed to have Eyeholes?",
   answers: ["Rick", "Tiny Rick", "Eyehole Man", "Jerry"],
-  correct: "Eyehole Man"
-},
-{
+  correct: 2
+},{
   question: "Who won the Gear Wars?",
   answers: ["The Gearheads", "The Cromulons", "The Bird People", "Nobody cares"],
-  correct: "Nobody cares"
-}
-];     
+  correct: 3
+}];     
 
 $("#start").on("click", function() {
 
