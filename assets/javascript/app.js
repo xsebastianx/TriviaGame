@@ -132,7 +132,7 @@ $("#start").on("click", function() {
   );
 
 
-  $("#submit").html("<button id='done' class='btn'>Done</button>");
+  $("#submit").html("<button id='done' class='btn-primary'>Done</button>");
   
   $("#done").on("click", function() {
 
