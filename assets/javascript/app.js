@@ -3,6 +3,7 @@ var intervalId;
 
 var correctA = 0;
 var incorrectA = 0;
+var unanswered= 0;
 
 // questions
 
@@ -195,6 +196,7 @@ $("#start").on("click", function() {
     $("#resultsMessage").html("<h3>Let's see what you got!</h3>");
     $("#correct").html("Correct Answers: " + correctA);
     $("#incorrect").html("Incorrect Answers: " + incorrectA);
+    $("#unanswered").html("Unanswered: " + unanswered);
   }
 
   function keepingScore() {
@@ -349,5 +351,6 @@ $("#start").on("click", function() {
 
     incorrectA++;
   }  
+
 
 }
